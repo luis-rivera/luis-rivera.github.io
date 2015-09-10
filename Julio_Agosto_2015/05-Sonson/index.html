@@ -1,0 +1,94 @@
+<html><!-- This file generated automatically by ICAT -->
+<head>
+<title>Images in "02-Sonson"</title>
+<script language="JavaScript1.1">
+<!--  to hide script contents from old browsers
+function OpenImage(num)
+{
+  var doc = top.pic_frame.window.document;
+  var info = top.list_frame.imageList;
+  var nmax = top.list_frame.numImages;
+  if (num < 0) {  // -1 means last image
+    num = nmax - 1;
+  }
+  doc.open();
+  doc.write("<body bgcolor='#006633' text='#ffffff' link='#ffff00' vlink='#77ff77' alink='#77ff77'>");
+  doc.write("<table width='100%' cellspacing=0 cellpadding=0><tr><td align=left valign=top>");
+  if (num < nmax-1) {
+    doc.write("<a href='javascript:top.OpenImage(" + (num+1) + ")'><b>Next--&gt;</b></a>");
+  } else if (top.list_frame.next_dir != "") {
+    doc.write("<a href='../" + top.list_frame.next_dir + "/index.html' target='_top'><b>Next--&gt;</b></a>");
+  } else {
+    doc.write("");
+  }
+  doc.write("</td><td align=center><font size='+1'><b>"+ info[num][1]);
+  doc.write("</b></font> &nbsp;--&nbsp; ");
+  if (info[num][4]) {
+    doc.write("<a href='javascript:top.BigImage(\"" + info[num][0] + "\")'>Load Full Image: " + info[num][2] + "</a><br>");
+  } else {
+    doc.write(info[num][2] + '<br>');
+  }
+  if (info[num][3]) doc.write('<p>' + info[num][3] + '<p>');
+  doc.write("</td><td align=right valign=top>");
+  if (num > 0) {
+    doc.write("<a href='javascript:top.OpenImage(" + (num-1) + ")'><b>&lt;--Prev</b></a>");
+  } else if (top.list_frame.prev_dir != "") {
+    doc.write("<a href='../" + top.list_frame.prev_dir + "/index.html' target='_top'><b>&lt;--Prev</b></a>");
+  } else {
+    doc.write("");
+  }
+  doc.write("</td></tr></table><center>");
+  doc.write(top.list_frame.frame_start);
+  if (info[num][4]) {
+    doc.write("<a href='javascript:top.BigImage(\"" + info[num][0] + "\")'>");
+    if (info[num][5] != "") {
+      doc.write('<img src="' + info[num][5] + '" border=0' + info[num][6] + '></a>');
+    } else {
+      doc.write('<img src="' + top.list_frame.medium_dir + info[num][0] + '" border=0' + info[num][6] + '></a>');
+    }
+  } else {
+    doc.write('<img src="' + info[num][0] + '"' + info[num][6] + '>');
+  }
+  doc.write(top.list_frame.frame_end);
+  if (info[num][7]) {
+    var index = info[num][7].indexOf("/");
+    var type;
+    if (index > 0) {
+      type = info[num][7].substring(0, index);
+    } else {
+      type = "extra";
+    }
+    var target = "";
+    if (type  == 'preview') target = " target='bigImage'";
+    type = type.substring(0,1).toUpperCase() + type.substring(1,type.length);
+    doc.write("<br><a href='" + info[num][7] + "'" + target + ">" + type + " image available: " + info[num][8] + "</a>");
+  }
+  if (info[num][9]) doc.write("<h3>Picture Details</h3>" + info[num][9]);
+  doc.write("</center>");
+  doc.write("</body>");
+  doc.close();
+}
+function BigImage(name)
+{
+  var bigwin = window.open(name,"bigImage","toolbar=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=1,copyhistory=0");//,width=750,height=600");
+  bigwin.focus();
+}
+function LinkMessage(text)
+{
+  window.status = text;
+}
+
+// end hiding contents from old browsers  -->
+</script>
+</head>
+      
+<frameset cols="250,*">
+<frame scrolling=yes src="list.html" name="list_frame">
+<frame name="pic_frame" src="list.html">
+<noframes>
+Sorry, Your browser must support frames to view this page
+<a href = "list.html">Click here instead</a>
+</noframes>
+</frameset>
+</body>
+</html>
